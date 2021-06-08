@@ -16,6 +16,8 @@ const result = numbers.map(function(element){
     return element*element;
 })
 
+
+
 const squre = element => element*element; 
 const squre = x => x * x ;
 
@@ -27,5 +29,5 @@ const isThere = numbers.find( x => x < 8);
 
 
 
-
 console.log();
+
