@@ -5,9 +5,7 @@ const students = [
     { id: 90, name: "yamin" },
     { id: 67, name: "ahan" }
 
-
 ]; 
-
 
 const names = students.map( s => s.name );
 const id = students.map( s => s.id );
