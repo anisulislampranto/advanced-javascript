@@ -1,0 +1,18 @@
+    .sidebar {
+        width: 200px;
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+        background: #F8F9FA;
+        color: #fff;
+        transition: all 0.3s;
+        
+    }
+    .sidebar li{
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .sidebar li:hover{
+        margin-left: 10px;
+    }
