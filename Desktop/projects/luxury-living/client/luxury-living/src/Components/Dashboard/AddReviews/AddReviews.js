@@ -16,11 +16,15 @@ const AddReviews = () => {
 
         fetch('http://localhost:4040/addReview', {
             method: 'POST',
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify(formData)
+            body: formData
         }).then(res => res.json())
-        .then(data => console.log('success'))
-        .catch(err => console.log(err))
+        .then(data => { 
+            if (data.insertedId) {
+                setSuccess('Review added successfully')
+                console.log('Review added successfully')
+            }
+            
+        })
     }
 
 

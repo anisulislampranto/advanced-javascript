@@ -10,7 +10,7 @@ const Projects = () => {
         fetch('http://localhost:4040/projects')
         .then(res => res.json())
         .then(data => setProjects(data))
-    },[projects])
+    },[])
 
     console.log(projects);
 
