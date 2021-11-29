@@ -15,7 +15,7 @@ const Reviews = () => {
 
     return (
         <div className='text-center'>
-            <p> {reviews.length} Reviews</p>
+            <h2> Testimonials</h2>
             <div className="container-fluid row">
                 {
                     reviews.map(review => <Review review={review} ></Review>)

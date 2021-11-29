@@ -13,7 +13,7 @@ const Sidebar = () => {
                     <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Order List</Link>
                 </li>
                 <li>
-                    <Link to='/addservice' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Service</Link>
+                    <Link to='/addservices' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Service</Link>
                 </li>
                 <li>
                     <Link to='/addprojects' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Project</Link>
