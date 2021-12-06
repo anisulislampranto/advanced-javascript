@@ -7,8 +7,11 @@ import {
 import AddProjects from "./Components/Dashboard/AddProjects/AddProjects";
 import AddReviews from "./Components/Dashboard/AddReviews/AddReviews";
 import AddService from "./Components/Dashboard/AddService/AddService";
+import Book from "./Components/Dashboard/Book/Book";
 import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
 import Home from "./Components/Home/Home/Home";
+import Login from "./Components/Login/Login/Login";
+import Payment from "./Components/Payment/Payment/Payment";
 
 function App() {
   return (
@@ -33,6 +36,19 @@ function App() {
 
         <Route exact path='/addServices'>
           <AddService/>
+        </Route>
+
+        
+        <Route exact path='/book'>
+          <Payment/>
+        </Route>
+
+        <Route exact path='/book/:id'>
+          <Payment/>
+        </Route>
+        
+        <Route exact path='/login'>
+          <Login/>
         </Route>
 
 

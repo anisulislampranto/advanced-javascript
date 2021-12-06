@@ -1,11 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Service.css'
 
-const Service = ({service}) => {
+const Service = (props) => {
+    const {name, description, image, _id, price} = props.service;
     return (
-        <div className="col-md-4">   
-            <img className="img-fluid mb-3" style={{ width: '80px', height: '80px' }} src={`data:image/png;base64,${service.image}`} alt="" />
-            <h5>{service.name}</h5>
-            <p>{service.description}</p>
+        <div className="col-md-4">  
+            <Link to={'/book/'+_id} className='text-decoration-none service-card'>
+                <img className="img-fluid mb-3 service-image" src={`data:image/png;base64,${image}`} alt="" />
+                <h5>{name}</h5>
+                <h5>${price}</h5>
+                <p>{description}</p>
+            </Link> 
+            
         </div>
     );
 };

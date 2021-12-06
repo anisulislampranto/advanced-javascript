@@ -25,7 +25,7 @@ const Sidebar = () => {
                     <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faTasks}/> Manage Services</Link>
                 </li>
                 <li>
-                    <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faShoppingCart}/> Book</Link>
+                    <Link to='/book' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faShoppingCart}/> Book</Link>
                 </li>
                 <li>
                     <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Booking List</Link>

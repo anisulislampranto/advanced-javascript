@@ -5,7 +5,7 @@ const Contact = () => {
     
   return (
       
-    <div className='text-center' >
+      <div className='text-center container' >
         <p>Contact</p>
         <h2>Let us handle your project, professionally.</h2>
       <form className="mx-5 px-5 my-4 py-5 text-center">

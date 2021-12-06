@@ -1,0 +1,15 @@
+.service-card{
+    color: black;
+}
+.service-card:hover{
+    color: green;
+
+}
+.service-image{
+    height: 80px;
+    width: 80px;
+}
+.service-image:hover{
+    width: 100px;
+    height: 100px;
+}

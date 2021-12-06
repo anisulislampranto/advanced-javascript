@@ -39,8 +39,9 @@ const AddProjects = () => {
     return (
         <div>
             <Navigation/>
-            <div className="container-fluid row d-flex">
+            <div className="container-fluid row"> 
                 <div className="col-md-2 sidebar"><Sidebar/></div>
+                
                 <div className="col-md-10" style={{position: 'absolute', right:0}}>
 
                     <div>
@@ -60,9 +61,9 @@ const AddProjects = () => {
                             <input onChange={e => setImage(e.target.files[0])} type="file" className="form-control" placeholder="Picture" />
                         </div>
                         
-                        <button type="submit" class="btn btn-primary my-3">Submit</button>
-                    </form>
-                    {success && <p style={{ color: 'green' }}>{success}</p>}
+                         <button type="submit" class="btn btn-primary my-3">Submit</button>
+                        </form>
+                        {success && <p style={{ color: 'green' }}>{success}</p>}
                         
                     </div>
                     
