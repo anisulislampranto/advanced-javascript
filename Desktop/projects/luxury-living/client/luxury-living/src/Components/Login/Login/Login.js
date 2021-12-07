@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { initializeApp } from 'firebase/app'; 
 import { GoogleAuthProvider,signInWithPopup,getAuth } from "firebase/auth";
 import firebaseConfig from './Firebase/Firebase.config';
+import { UserContext } from '../../../App';
 
 
 const Login = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const app = initializeApp(firebaseConfig)
     const handleGoogleSignIn =()=>{
@@ -12,11 +15,15 @@ const Login = () => {
         const auth = getAuth(app);
         signInWithPopup(auth, provider)
         .then((result) => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
             const user = result.user;
-            console.log(user, token)
-            // ...
+            const {displayName, email, photoURL} = user;
+            const signedInUser =  {
+                name: displayName,
+                email: email,
+                photo: photoURL
+            }
+            setLoggedInUser(signedInUser)
+            
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -26,6 +33,7 @@ const Login = () => {
         });
 
     }
+    console.log(loggedInUser);
 
     return (
         <div>

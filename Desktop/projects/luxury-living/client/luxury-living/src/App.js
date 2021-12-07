@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,16 +7,24 @@ import {
 import AddProjects from "./Components/Dashboard/AddProjects/AddProjects";
 import AddReviews from "./Components/Dashboard/AddReviews/AddReviews";
 import AddService from "./Components/Dashboard/AddService/AddService";
-import Book from "./Components/Dashboard/Book/Book";
 import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
+import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
 import Payment from "./Components/Payment/Payment/Payment";
 
+export const UserContext = createContext();
+
 function App() {
+  const [loggedInUser, setLoggedInUser] =  useState({})
   return (
-    <Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
       <Switch>
+
+        <Route exact path='/'>
+          <Home/>
+        </Route>
 
         <Route exact path='/home'>
           <Home/>
@@ -38,23 +46,23 @@ function App() {
           <AddService/>
         </Route>
 
-        
-        <Route exact path='/book'>
+        <PrivateRoute exact path='/book'>
           <Payment/>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/book/:id'>
+        <PrivateRoute exact path='/book/:serviceId'>
           <Payment/>
-        </Route>
+        </PrivateRoute>
         
-        <Route exact path='/login'>
+        <PrivateRoute exact path='/login'>
           <Login/>
-        </Route>
+        </PrivateRoute>
 
 
 
       </Switch>
-    </Router>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
