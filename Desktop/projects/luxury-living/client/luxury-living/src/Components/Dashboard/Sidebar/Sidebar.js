@@ -10,7 +10,7 @@ const Sidebar = () => {
         <div>
             <ul className="list-unstyled">
                 <li>
-                    <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Order List</Link>
+                    <Link to='/orderlist' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Order List</Link>
                 </li>
                 <li>
                     <Link to='/addservices' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Service</Link>
@@ -19,7 +19,7 @@ const Sidebar = () => {
                     <Link to='/addprojects' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Project</Link>
                 </li>
                 <li>
-                    <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faUserCog}/> Make Admin</Link>
+                    <Link to='/makeadmin' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faUserCog}/> Make Admin</Link>
                 </li>
                 <li>
                     <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faTasks}/> Manage Services</Link>

@@ -8,6 +8,8 @@ import AddProjects from "./Components/Dashboard/AddProjects/AddProjects";
 import AddReviews from "./Components/Dashboard/AddReviews/AddReviews";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
+import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
+import OrderList from "./Components/Dashboard/OrderList/OrderList";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
 import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
@@ -16,7 +18,13 @@ import Payment from "./Components/Payment/Payment/Payment";
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] =  useState({})
+  const [loggedInUser, setLoggedInUser] =  useState({
+    isSignedIn: false,
+    name: "",
+    email: "",
+    photo: "",
+  })
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
@@ -30,21 +38,33 @@ function App() {
           <Home/>
         </Route>
 
-        <Route exact path='/dashboardhome'>
+        <Route exact path='/login'>
+          <Login></Login>
+        </Route>
+
+        <PrivateRoute exact path='/dashboardhome'>
           <DashboardHome/>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/addprojects'>
+        <PrivateRoute exact path='/orderlist'>
+          <OrderList/>
+        </PrivateRoute>
+
+        <PrivateRoute exact path='/makeadmin'>
+          <MakeAdmin/>
+        </PrivateRoute>
+
+        <PrivateRoute exact path='/addprojects'>
           <AddProjects/>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/addReview'>
+        <PrivateRoute exact path='/addReview'>
           <AddReviews/>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/addServices'>
+        <PrivateRoute exact path='/addServices'>
           <AddService/>
-        </Route>
+        </PrivateRoute>
 
         <PrivateRoute exact path='/book'>
           <Payment/>
@@ -52,10 +72,6 @@ function App() {
 
         <PrivateRoute exact path='/book/:serviceId'>
           <Payment/>
-        </PrivateRoute>
-        
-        <PrivateRoute exact path='/login'>
-          <Login/>
         </PrivateRoute>
 
 

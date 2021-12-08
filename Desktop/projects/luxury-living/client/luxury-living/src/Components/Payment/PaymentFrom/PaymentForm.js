@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {PaymentElement, CardElement,useStripe,useElements} from '@stripe/react-stripe-js';
+import { CardElement,useStripe,useElements} from '@stripe/react-stripe-js';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import { useParams } from 'react-router';
 import { UserContext } from '../../../App';
@@ -14,7 +14,9 @@ const PaymentForm = () => {
     const [paymentSuccess, setPaymentSuccess] =  useState(null);
     const [serviceInfo, setServiceInfo] = useState({});
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    
+
+    const {price} = serviceInfo;
+
     const stripe = useStripe();
     const elements = useElements();
 
@@ -22,6 +24,25 @@ const PaymentForm = () => {
     const handleSubmit = async (event) => {
         // Block native form submission.
         event.preventDefault();
+
+
+        const formData = new FormData();
+        formData.append('name', name)
+        formData.append('email', email)
+        formData.append('serviceName', serviceName)
+        formData.append('servicePrice', price)
+        formData.append('date', new Date())
+
+            fetch('http://localhost:4040/addBooking', {
+            method: 'POST',
+            body: formData
+            }).then(res => res.json())
+            .then( data => {
+                if(data && paymentSuccess) {
+                    setSuccess('Your order has been succesfully placed')
+                }
+                else( setSuccess('Please Try again with a valid payment Gateway.'))
+            })
 
         if (!stripe || !elements) {
             // Stripe.js has not loaded yet. Make sure to disable
@@ -51,22 +72,8 @@ const PaymentForm = () => {
             setPaymentError('')
         }
 
-
-        const formData = new FormData();
-        formData.append('name', name)
-        formData.append('email', email)
-        formData.append('serviceName', serviceName)
-        formData.append('date', new Date())
-
-        fetch('http://localhost:4040/addBooking', {
-            method: 'POST',
-            body: formData
-        }).then(res => res.json())
-        .then( data => console.log(data))
-
-        
+         
     }
-
 
     useEffect(()=>{
         fetch('http://localhost:4040/service/'+ serviceId )
