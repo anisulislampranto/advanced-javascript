@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../../images/logo.png";
 import './Navigation.css';
 import {Link} from 'react-router-dom';
+import { UserContext } from "../../../App";
 
 const Navigation = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [adminEmail, setAdminEmail] = useState([]);
+
+    useEffect(()=> {
+        fetch('http://localhost:4040/adminPanel')
+        .then(res => res.json())
+        .then(data => setAdminEmail(data[0].adminEmail))
+    },[])
+
+
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -17,9 +30,6 @@ const Navigation = () => {
                         <Link to='/home' class="nav-link active" aria-current="page" href="#">Home</Link>
                     </li>
                     <li class="nav-item px-3">
-                        <Link to='/admin' class="nav-link active" href="#">Admin</Link>
-                    </li>
-                    <li class="nav-item px-3">
                         <Link to='/about' class="nav-link active" href="#" >About us</Link>
                     </li>
                     <li class="nav-item px-3">
@@ -28,9 +38,22 @@ const Navigation = () => {
                     <li class="nav-item px-3">
                         <Link to='/contact' class="nav-link active" href="#">Contact</Link>
                     </li>
+                    {
+                        loggedInUser.email === adminEmail && 
+                        <li class="nav-item px-3">
+                            <Link to='/admin' class="nav-link active" href="#">Admin</Link>
+                        </li>
+                    }
+
+                    
                     
                 </ul>
+                {
+                loggedInUser.isSignedIn ? <img src={loggedInUser.photo} style={{width:'35px', height: '35px', borderRadius: '5px'}} alt="" /> : 
                 <button class="btn btn-primary">Login</button>
+
+                }
+
             </div>
         </div>
     </nav>

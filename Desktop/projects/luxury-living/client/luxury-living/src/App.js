@@ -9,6 +9,7 @@ import AddReviews from "./Components/Dashboard/AddReviews/AddReviews";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
+import ManageServices from "./Components/Dashboard/ManageServices/ManageServices";
 import OrderList from "./Components/Dashboard/OrderList/OrderList";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
@@ -44,6 +45,10 @@ function App() {
 
         <PrivateRoute exact path='/dashboardhome'>
           <DashboardHome/>
+        </PrivateRoute>
+
+        <PrivateRoute exact path='/manageservices'>
+          <ManageServices/>
         </PrivateRoute>
 
         <PrivateRoute exact path='/orderlist'>
