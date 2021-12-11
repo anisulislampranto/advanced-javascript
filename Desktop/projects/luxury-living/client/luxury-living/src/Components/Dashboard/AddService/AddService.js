@@ -50,26 +50,26 @@ const AddService = () => {
                     <div>
                         <h1>Add Service</h1>
                         <form onSubmit={handleSubmit}>
+                            
+                            <div className="form-group">
+                                <label for="exampleInputName1">Service title</label>
+                                <input onBlur={e => setTitle(e.target.value)} type="text" name="title" className="form-control"  placeholder="Enter Service title" />
+                            </div>
+                            <div className="form-group">
+                                <label for="exampleInputEmail1">Service Description</label>
+                                <input onBlur={e => setDescription(e.target.value)} type="text" name="description" className="form-control"  placeholder="Enter Service Description" />
+                            </div>
+                            <div className="form-group">
+                                <label for="exampleInputEmail1">Service Price</label>
+                                <input onBlur={e => setPrice(e.target.value)} type="number" name="price" className="form-control"  placeholder="Enter Service Price" />
+                            </div>
+                            <div className="form-group">
+                                <label for="exampleFormControlFile1">Upload Service Icon</label>
+                                <input onChange={e => setIcon(e.target.files[0])} type="file" className="form-control" placeholder="Service Icon" />
+                            </div>
                         
-                        <div className="form-group">
-                            <label for="exampleInputName1">Service title</label>
-                            <input onBlur={e => setTitle(e.target.value)} type="text" name="title" className="form-control"  placeholder="Enter Service title" />
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleInputEmail1">Service Description</label>
-                            <input onBlur={e => setDescription(e.target.value)} type="text" name="description" className="form-control"  placeholder="Enter Service Description" />
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleInputEmail1">Service Price</label>
-                            <input onBlur={e => setPrice(e.target.value)} type="number" name="price" className="form-control"  placeholder="Enter Service Price" />
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleFormControlFile1">Upload Service Icon</label>
-                            <input onChange={e => setIcon(e.target.files[0])} type="file" className="form-control" placeholder="Service Icon" />
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary my-3">Submit</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary my-3">Submit</button>
+                         </form>
                     {success && <p style={{ color: 'green' }}>{success}</p>}
                         
                     </div>

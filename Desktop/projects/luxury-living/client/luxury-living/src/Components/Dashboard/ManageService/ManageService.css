@@ -1,0 +1,12 @@
+.service-edit-form{
+    box-shadow: 2px 4px 4px gray;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.service-card{
+    box-shadow: 2px 4px 4px gray;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}

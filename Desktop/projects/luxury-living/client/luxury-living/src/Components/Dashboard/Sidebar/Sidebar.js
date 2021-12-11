@@ -35,17 +35,20 @@ const Sidebar = () => {
                         <li>
                             <Link to='/manageservices' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faTasks}/> Manage Services</Link>
                         </li> 
+                        <li>
+                            <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Bookings</Link>
+                        </li>
                     </> 
                     : 
                     <>
                         <li>
-                        <Link to='/book' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faShoppingCart}/> Book</Link>
+                            <Link to='/book' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faShoppingCart}/> Book</Link>
                         </li>
                         <li>
-                        <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Booking List</Link>
+                            <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Bookings</Link>
                         </li>
                         <li>
-                        <Link to='/addReview' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faCommentDots}/> Add Review </Link>
+                            <Link to='/addReview' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faCommentDots}/> Add Review </Link>
                         </li>
                     </>
                 }
