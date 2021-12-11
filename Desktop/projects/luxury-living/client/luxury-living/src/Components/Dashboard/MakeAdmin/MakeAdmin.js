@@ -32,15 +32,14 @@ const MakeAdmin = () => {
                     <Sidebar/>
                 </div>
                 <div className='col-md-10' style={{position: 'absolute', right: 0}}>
-                        <h1>Make Admin</h1>
-                        <form action="" onSubmit={handelSubmit} className='form-group container'>
-                            <label htmlFor="">Name</label>
-                            <input className='form-control mb-3' type="text" onBlur={e => setAdminName(e.target.value)} placeholder="Name"/> 
-                            <label htmlFor="">Email</label>
-                            <input className='form-control' type="text" onBlur={e => setAdminEmail(e.target.value)} placeholder='Email address'/> 
-                            <button className='btn btn-primary my-2' type='submit'>Add Admin</button>
-                        </form>
-                        
+                    <h1>Make Admin</h1>
+                    <form action="" onSubmit={handelSubmit} className='form-group container'>
+                        <label htmlFor="">Name</label>
+                        <input className='form-control mb-3' type="text" onBlur={e => setAdminName(e.target.value)} placeholder="Name"/> 
+                        <label htmlFor="">Email</label>
+                        <input className='form-control' type="text" onBlur={e => setAdminEmail(e.target.value)} placeholder='Email address'/> 
+                        <button className='btn btn-primary my-2' type='submit'>Add Admin</button>
+                    </form>
                 </div>
             </div>
         </div>

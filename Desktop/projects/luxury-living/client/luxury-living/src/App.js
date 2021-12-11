@@ -8,7 +8,6 @@ import AddProjects from "./Components/Dashboard/AddProjects/AddProjects";
 import AddReviews from "./Components/Dashboard/AddReviews/AddReviews";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
-import EditService from "./Components/Dashboard/EditServiceForm/EditServiceForm";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import ManageServices from "./Components/Dashboard/ManageServices/ManageServices";
 import OrderList from "./Components/Dashboard/OrderList/OrderList";

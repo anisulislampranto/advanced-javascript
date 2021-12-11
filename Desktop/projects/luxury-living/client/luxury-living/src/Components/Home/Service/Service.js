@@ -4,6 +4,7 @@ import './Service.css'
 
 const Service = (props) => {
     const {title, description, image, _id, price} = props.service;
+    
     return (
         <div className="col-md-4">  
             <Link to={'/book/'+_id} className='text-decoration-none service-card'>

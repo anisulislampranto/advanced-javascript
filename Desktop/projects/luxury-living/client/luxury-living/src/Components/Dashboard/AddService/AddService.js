@@ -36,8 +36,6 @@ const AddService = () => {
                 console.error('Error:', error);
             });
     }
-    
-
 
 
     return (
@@ -70,7 +68,7 @@ const AddService = () => {
                         
                             <button type="submit" class="btn btn-primary my-3">Submit</button>
                          </form>
-                    {success && <p style={{ color: 'green' }}>{success}</p>}
+                        {success && <p style={{ color: 'green' }}>{success}</p>}
                         
                     </div>
                     

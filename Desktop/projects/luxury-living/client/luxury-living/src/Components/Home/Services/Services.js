@@ -10,8 +10,6 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
 
-    console.log(services)
-
     return (
         <div className='text-center'>
             <p> {services.length} Services</p>
