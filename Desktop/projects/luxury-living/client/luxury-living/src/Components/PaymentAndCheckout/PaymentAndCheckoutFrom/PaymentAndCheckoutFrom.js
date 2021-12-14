@@ -4,7 +4,7 @@ import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import { useParams } from 'react-router';
 import { UserContext } from '../../../App';
 
-const PaymentForm = () => {
+const PaymentAndCheckoutFrom = () => {
     const {serviceId} = useParams();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -13,25 +13,25 @@ const PaymentForm = () => {
     const [paymentError, setPaymentError] = useState(null);
     const [paymentSuccess, setPaymentSuccess] =  useState(null);
     const [serviceInfo, setServiceInfo] = useState({});
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext);
 
-    const {price} = serviceInfo;
+    
 
     const stripe = useStripe();
     const elements = useElements();
 
 
-    const handleSubmit = async (event) => {
-        // Block native form submission.
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
 
         const formData = new FormData();
-        formData.append('name', name)
-        formData.append('email', email)
-        formData.append('serviceName', serviceName)
-        formData.append('servicePrice', price)
-        formData.append('date', new Date())
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('serviceName', serviceName);
+        formData.append('servicePrice', serviceInfo.price);
+        // formData.append('icon', serviceInfo.image); 
+        formData.append('date', new Date());
 
             fetch('http://localhost:4040/addBooking', {
             method: 'POST',
@@ -41,7 +41,7 @@ const PaymentForm = () => {
                 if(data && paymentSuccess) {
                     setSuccess('Your order has been succesfully placed')
                 }
-                else( setSuccess('Please Try again with a valid payment Gateway.'))
+                else( setSuccess('Order Placed Without Payment. Please Try again with a valid payment Gateway.'))
             })
 
         if (!stripe || !elements) {
@@ -78,10 +78,10 @@ const PaymentForm = () => {
     useEffect(()=>{
         fetch('http://localhost:4040/service/'+ serviceId )
         .then(res =>res.json())
-        .then(data => setServiceInfo(data))
+        .then(data => setServiceInfo(data[0]))
     },[serviceId])
 
-
+    console.log(serviceInfo);
     
     return (
 
@@ -107,14 +107,14 @@ const PaymentForm = () => {
 
                     <div className="form-group">
                         <label for="exampleInputEmail1"> Service title </label>
-                        <input onBlur={e => setServiceName(e.target.value)} type="text" name="serviceName" defaultValue={serviceInfo.name} className="form-control"  placeholder="Enter Service Title" />
+                        <input onBlur={e => setServiceName(e.target.value)} type="text" name="serviceName" defaultValue={serviceInfo?.title} className="form-control"  placeholder="Enter Service Title" />
                     </div>
                     
                     <br />
                     {/* <button type="submit" class="btn btn-primary my-3">Submit</button> */}
                     <CardElement />
                     <br />
-                    <p>Selected Service Charge ${serviceInfo.price}</p>
+                    <p>Selected Service Charge ${serviceInfo?.price}</p>
                     <button className="mt-5 btn btn-primary" type="submit" disabled={!stripe}> Pay & Checkout </button>
 
                 </form>
@@ -131,4 +131,4 @@ const PaymentForm = () => {
     );
 };
 
-export default PaymentForm;
+export default PaymentAndCheckoutFrom;

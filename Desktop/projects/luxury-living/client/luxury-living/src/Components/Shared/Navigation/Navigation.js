@@ -39,10 +39,13 @@ const Navigation = () => {
                         <Link to='/contact' class="nav-link active" href="#">Contact</Link>
                     </li>
                     {
-                        loggedInUser.email === adminEmail && 
+                        loggedInUser.email === adminEmail ? 
                         <li class="nav-item px-3">
-                            <Link to='/admin' class="nav-link active" href="#">Admin</Link>
-                        </li>
+                            <Link to='/Bookings' class="nav-link active" href="#">Admin</Link>
+                        </li> : 
+                        <li class="nav-item px-3">
+                            <Link to='/bookings' class="nav-link active" href="#">Dashboard</Link>
+                         </li> 
                     }
 
                     

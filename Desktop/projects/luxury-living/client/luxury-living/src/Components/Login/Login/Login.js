@@ -14,7 +14,6 @@ const Login = () => {
   
     let { from } = location.state || { from: { pathname: "/" } };
   
-
     const app = initializeApp(firebaseConfig)
     const handleGoogleSignIn =()=>{
         const provider = new GoogleAuthProvider();
@@ -39,9 +38,7 @@ const Login = () => {
             const credential = GoogleAuthProvider.credentialFromError(error);
             console.log(errorCode, errorMessage, email, credential)
         });
-
     }
-    console.log(loggedInUser);
 
     return (
         <div>

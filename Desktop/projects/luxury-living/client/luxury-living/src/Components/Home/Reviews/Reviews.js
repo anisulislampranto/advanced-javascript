@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
 
 const Reviews = () => {
-
     const [reviews, setReviews] = useState([]);
 
     useEffect(()=>{
@@ -10,8 +9,6 @@ const Reviews = () => {
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
-
-    console.log(reviews);
 
     return (
         <div className='text-center'>

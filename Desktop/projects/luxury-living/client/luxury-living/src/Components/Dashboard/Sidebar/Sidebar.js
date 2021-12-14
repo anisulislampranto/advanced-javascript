@@ -24,6 +24,9 @@ const Sidebar = () => {
                     loggedInUser.email === adminEmail ? 
                     <>
                         <li>
+                            <Link to='/orderList' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Order List</Link>
+                        </li>
+                        <li>
                             <Link to='/addservices' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faPlus}/> Add Service</Link>
                         </li>
                         <li>
@@ -35,9 +38,7 @@ const Sidebar = () => {
                         <li>
                             <Link to='/manageservices' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faTasks}/> Manage Services</Link>
                         </li> 
-                        <li>
-                            <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Bookings</Link>
-                        </li>
+                        
                     </> 
                     : 
                     <>
@@ -45,18 +46,13 @@ const Sidebar = () => {
                             <Link to='/book' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faShoppingCart}/> Book</Link>
                         </li>
                         <li>
-                            <Link className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Bookings</Link>
+                            <Link to='/bookings' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faListUl}/> Bookings</Link>
                         </li>
                         <li>
                             <Link to='/addReview' className="text-decoration-none" style={{color: '#251d58'}}> <FontAwesomeIcon icon={faCommentDots}/> Add Review </Link>
                         </li>
                     </>
                 }
-                
-
-
-
-                
 
             </ul>
         </div>

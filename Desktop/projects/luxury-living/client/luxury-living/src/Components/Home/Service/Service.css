@@ -1,7 +1,7 @@
-.service-card{
+.service{
     color: black;
 }
-.service-card:hover{
+.service:hover{
     color: green;
 
 }

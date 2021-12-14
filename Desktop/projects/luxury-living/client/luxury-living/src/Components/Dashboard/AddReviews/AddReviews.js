@@ -38,7 +38,7 @@ const AddReviews = () => {
 
                     <div>
                         <h1>Add Review</h1>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="container">
                         
                         <div className="form-group">
                             <label for="exampleInputName1">Name</label>

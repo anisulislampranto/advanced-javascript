@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Project from '../Project/Project';
 
-
-
 const Projects = () => {
     const [projects, setProjects] = useState([]);
 
@@ -11,9 +9,6 @@ const Projects = () => {
         .then(res => res.json())
         .then(data => setProjects(data))
     },[])
-
-    console.log(projects);
-
     
     return (
         <div className='text-center'>

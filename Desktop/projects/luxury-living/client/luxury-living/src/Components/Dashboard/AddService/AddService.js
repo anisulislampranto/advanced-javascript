@@ -47,7 +47,7 @@ const AddService = () => {
 
                     <div>
                         <h1>Add Service</h1>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="container">
                             
                             <div className="form-group">
                                 <label for="exampleInputName1">Service title</label>

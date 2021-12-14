@@ -46,7 +46,7 @@ const AddProjects = () => {
 
                     <div>
                         <h1>Add Project</h1>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className='container'>
                         
                         <div className="form-group">
                             <label for="exampleInputName1">Project Name</label>

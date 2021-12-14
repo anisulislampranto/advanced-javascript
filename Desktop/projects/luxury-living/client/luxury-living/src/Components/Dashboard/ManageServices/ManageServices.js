@@ -17,7 +17,6 @@ const ManageServices = () => {
                     <Sidebar/>
                 </div>
                 <div className="col-md-10 row container"  style={{position: 'absolute', right:0}}>
-                    <div id="edit-input-feild"></div>
                     {
                         services.map(service => <ManageService service={service}></ManageService>)
                     }
