@@ -1,0 +1,20 @@
+.card-container{
+    width: 40%;
+    display: flex;
+    box-shadow: 2px 4px 4px gray;
+    border-radius: 10px;
+    gap: 100px;
+    align-items: center;
+}
+.image-continer img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 5px;
+
+}
+.info-section{
+    width: 50%;
+    height: 50%;
+
+}
