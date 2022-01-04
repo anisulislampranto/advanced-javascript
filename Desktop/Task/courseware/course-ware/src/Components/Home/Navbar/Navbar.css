@@ -1,0 +1,36 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;   
+    padding: 20px;
+    background: white;
+    box-shadow: white;
+    box-shadow: 0 3px 2px -2px gainsboro;
+
+}
+.logo{
+    font-weight: bolder;
+    font-size:x-large;
+    text-decoration: none;
+    color: #583bab;
+}
+.nav-links a{
+    margin-left: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    vertical-align: middle;
+} 
+.nav-links a:hover{
+    color: goldenrod;
+    border-bottom: 2px solid goldenrod;
+}
+.login{
+    background-color: #583bab;
+    padding: 10px;
+    border-radius: 5px;
+}
+.registration{
+    border: 1px solid #583bab;
+    padding: 10px;
+    border-radius: 5px;
+}
