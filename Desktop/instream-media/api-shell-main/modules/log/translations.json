@@ -1,0 +1,14 @@
+{
+    "200001": "{{user.name}} signed up",
+    "200002": "{{user.name}} logged in",
+    "200003": "{{user.name}} logged out",
+    "200004": "{{user.name}} reset the password",
+    "200005": "{{user.name}} confirmed the email address",
+    "200006": "{{user.name}} changed the password",
+    "200007": "{{user.name}} enabled 2 Factor Authentication",
+    "200008": "{{user.name}} disabled 2 Factor Authentication",
+    "200009": "{{user.name}} changed his email to {{user.email}}",
+    "200101": "{{user.name}} created {{team.name}}",
+    "200102": "{{user.name}} joined {{team.name}}",
+    "200103": "{{user.name}} left {{team.name}}"
+}
